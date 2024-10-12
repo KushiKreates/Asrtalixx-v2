@@ -1,0 +1,185 @@
+:root {
+    /* Gray-900 and Purple-500 Theme Colors */
+    --color-primary: #1f1f1f; /* Gray-900 */
+    --color-secondary: #2c2c2c; /* Slightly lighter gray */
+    --color-tertiary: #121212; /* Even darker gray */
+    --color-quaternary: #4b4b4b; /* Medium gray */
+    --color-quinary: #6e6e6e; /* Light gray */
+    --button-color: #1f1f1f; /* Gray-900 */
+    --button-color-hover: #3a3a3a; /* Slightly lighter gray */
+    --button-color-active: #26004d; /* Purple-500 */
+    --button-color-disabled: #4b4b4b; /* Medium gray */
+    --button-color-text: #6e6e6e; /* Light gray */
+    --text-main: #ffffff; /* White text */
+    --text-secondary: #ffffff; /* White text */
+    --text-tertiary: #ffffff; /* White text */
+    --background-color: #26004d; /* Gray-900 */
+    --invert: 1000;
+    --sidebar-button-color: #ffffff; /* White text */
+    --sidebar-button-color-hover: #0e0e1d; /* Dark purple for hover effect */
+    --card-bg: #2c2c2c; /* Slightly lighter gray */
+}
+
+:root {
+    --sidebar-size: 256px;
+}
+
+.nav-bar {
+    display: none;
+}
+
+.sidebar {
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    width: var(--sidebar-size);
+    background-color: var(--color-tertiary);
+    overflow: auto;
+    z-index: 9999;
+    height: calc(100vh - 3.5rem);
+}
+
+.content-container {
+    margin-left: calc(var(--sidebar-size) + 40px);
+    margin-right: 40px;
+}
+
+.content-dashboard {
+    max-width: 1200px;
+}
+
+.navbar-button {
+    display: none;
+}
+
+/* Sidebar links */
+.sidebar a {
+    display: block;
+    color: var(--sidebar-button-color);
+    padding: 16px;
+    text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar .active > .icon {
+    background-color: var(--button-color-active);
+    color: var(--text-main); /* White text */
+}
+
+.sidebar > a {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.icon {
+    border-radius: 30%;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    background-size: 100px;
+    line-height: 30px;
+    background-color: var(--button-color);
+    color: var(--button-color-text);
+    margin-right: 10px;
+}
+
+.sidebar > a > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) > .icon {
+    background-color: var(--sidebar-button-color-hover);
+}
+
+.icon {
+    transition: all 0.2s ease-in-out;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+    margin-left: var(--sidebar-size);
+    padding: 1px 16px;
+    height: 1000px;
+}
+
+@media screen and (max-width: 1150px) {
+    .sidebar {
+        position: fixed;
+        width: 100%;
+        left: -1150px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .content-container {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
+    div.content {
+        margin-left: 0;
+        padding: 1px 16px;
+        height: 1000px;
+    }
+
+    .active-nav {
+        left: 0;
+        margin-right: var(--sidebar-size);
+        width: var(--sidebar-size);
+        height: calc(100vh - 3.5rem);
+    }
+
+    .nav-bar {
+        display: flex;
+    }
+
+    .navbar-button {
+        display: inline;
+        font-size: 1.5rem;
+        margin-left: 1rem;
+        cursor: pointer;
+    }
+}
+
+.avatar {
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    border-radius: 5%;
+}
+
+.smallAvatar {
+    width: 70px;
+    border-radius: 50%;
+}
+
+.nav-bar > * {
+    margin: 10px;
+}
+
+.left {
+    margin-left: auto;
+}
+
+.openMenu {
+    font-size: 50px;
+}
+
+.openMenu:hover {
+    cursor: pointer;
+}
+
+.topbar {
+    position: sticky;
+    margin-top: 0 !important;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    height: 3.5rem;
+    overflow-y: hidden;
+    background: #1a1a1a;
+}

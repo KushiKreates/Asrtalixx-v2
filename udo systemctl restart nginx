@@ -1,0 +1,20 @@
+[0;1;32m●[0m nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+     Active: [0;1;32mactive (running)[0m since Sun 2024-10-06 04:24:08 CEST; 1min 6s ago
+       Docs: man:nginx(8)
+    Process: 1515742 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+    Process: 1515773 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+   Main PID: 1515789 (nginx)
+      Tasks: 7 (limit: 19137)
+     Memory: 59.8M
+     CGroup: /system.slice/nginx.service
+             ├─1515789 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+             ├─1515790 nginx: worker process
+             ├─1515791 nginx: worker process
+             ├─1515792 nginx: worker process
+             ├─1515793 nginx: worker process
+             ├─1515794 nginx: worker process
+             └─1515795 nginx: worker process
+
+Oct 06 04:24:08 vmi2070782.contaboserver.net systemd[1]: Starting A high performance web server and a reverse proxy server...
+Oct 06 04:24:08 vmi2070782.contaboserver.net systemd[1]: Started A high performance web server and a reverse proxy server.
